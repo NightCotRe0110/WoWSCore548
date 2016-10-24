@@ -3083,15 +3083,6 @@ SpellCooldownsEntry const* SpellInfo::GetSpellCooldowns() const
     return SpellCooldownsId ? sSpellCooldownsStore.LookupEntry(SpellCooldownsId) : NULL;
 }
 
-void SpellInfo::SetDurationIndex(uint32 index)
-{
-	SpellDurationEntry const* durationIndex = sSpellDurationStore.LookupEntry(index);
-	if (!durationIndex)
-		return;
-
-	DurationEntry = durationIndex;
-}
-
 void SpellInfo::_UnloadImplicitTargetConditionLists()
 {
     // find the same instances of ConditionList and delete them.
